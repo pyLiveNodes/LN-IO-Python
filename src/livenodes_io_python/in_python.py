@@ -3,12 +3,23 @@ from livenodes_core_nodes.ports import Ports_any, Ports_empty
 
 
 class In_python(Producer):
-    """
-    Input any python data into the livenodes graph.
+    """Input any python data into the livenodes graph.
+
     Mostly for debug purposes and fast iterations.
     In the long run I would expect a custom node to always be more efficient
 
-    Data should be a list of items to be sent into the graph.
+    Data should be a list of items to be sent into the graph. Each process
+    invocation sends one of these items.
+
+    Attributes
+    ----------
+    data : List
+        List of data items to send.
+
+    Ports Out
+    ---------
+    any : Port_Any
+        Data list item.
     """
 
     ports_in = Ports_empty()

@@ -18,6 +18,8 @@ develop-eggs
 venv*/
 pyvenv*/
 pip-wheel-metadata/
+data/
+models/
 
 # Installer logs
 pip-log.txt

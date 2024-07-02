@@ -3,16 +3,25 @@ from livenodes_core_nodes.ports import Ports_any, Ports_empty
 
 
 class Out_python(Node):
-    """
-    Saves all input from the 'any' port into a mp.SimpleQueue.
-    This data can be accessed via 'get_state' on this node in your python process.
+    """Saves all input into an externally accessible list.
 
-    Saves each process invocation into a list.
-    I.e. if you set the input to emit_at_once=5, you'll get list entries of size 5.
-    Correspondes to the in_python interface.
+    Saves each process invocation into a list. I.e. if you set the input to
+    `emit_at_once=5`, you'll get list entries of size 5. Correspondes to
+    the `in_python` interface.
 
-    The node must run in the same python process as the process you want to access the data from.
-    I have looked into shared mem to allow subprocesses, but found that quite often the mp.queue.put() blocks if the queue is even partially full and then blocks the full livenode graph
+    This data can be accessed via `get_state` on this node in your Python
+    process. Useful for testing other nodes or extracting results from
+    Livenodes graphs for further external processing.
+
+    Ports In
+    ---------
+    any : Port_Any
+        Input data to save.
+
+    Methods
+    ---------
+    get_state : list
+        Returns the saved data. Datatype of list entries depends on input data.
     """
 
     ports_in = Ports_any()

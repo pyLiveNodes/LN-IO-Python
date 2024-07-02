@@ -1,6 +1,6 @@
 # LN IO Python
 
-The Livenodes IO Python package provides nodes for data input and output using Python lists/NumPy arrays directly, as well as for generating data from functions. As such, these nodes are most useful for testing other nodes and extracting results from Livenodes graphs for further external processing.
+The Livenodes IO Python package provides nodes for data input and output using Python lists/NumPy arrays directly, as well as for generating data from functions. As such, these nodes are most useful for testing other nodes or extracting results from Livenodes graphs for further external processing.
 
 [LiveNodes](https://livenodes.pages.csl.uni-bremen.de/livenodes/index.html) are small units of computation for digital signal processing in python. They are connected multiple synced channels to create complex graphs for real-time applications. Each node may provide a GUI or Graph for live interaction and visualization.
 

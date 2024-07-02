@@ -30,9 +30,9 @@ class Out_python(Node):
     category = "Data Sink"
     description = ""
 
-    example_init = {"name": "Python Out"}
+    example_init = {"name": "Python Output"}
 
-    def __init__(self, name="Python Out", **kwargs):
+    def __init__(self, name="Python Output", **kwargs):
         super().__init__(name, **kwargs)
         self.out = []
 

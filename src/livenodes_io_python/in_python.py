@@ -28,9 +28,9 @@ class In_python(Producer):
     category = "Data Source"
     description = ""
 
-    example_init = {"name": "Python In"}
+    example_init = {"name": "Python Input"}
 
-    def __init__(self, name="Python In", data=[], **kwargs):
+    def __init__(self, name="Python Input", data=[], **kwargs):
         super().__init__(name, **kwargs)
         self.data = data
 

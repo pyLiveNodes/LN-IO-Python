@@ -14,12 +14,12 @@ class Out_python(Node):
     Livenodes graphs for further external processing.
 
     Ports In
-    ---------
+    --------
     any : Port_Any
-        Input data to save.
+        Input data entry to save.
 
     Methods
-    ---------
+    -------
     get_state : list
         Returns the saved data. Datatype of list entries depends on input data.
     """

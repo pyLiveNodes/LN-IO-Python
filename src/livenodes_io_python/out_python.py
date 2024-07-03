@@ -10,7 +10,7 @@ class Out_python(Node):
 
     This data can be accessed via `get_state` on this node in your Python
     process. Useful for testing other nodes or extracting results from
-    Livenodes graphs for further external processing.
+    LiveNodes graphs for further external processing.
 
     Inverse of the `In_python` node.
 

@@ -16,7 +16,7 @@ class Ports_out(NamedTuple):
 
 
 class In_function(Producer_async):
-    """Inputs data generated from a NumPy function into the Livenodes graph.
+    """Inputs data generated from a NumPy function into the LiveNodes graph.
 
     Generates an infinite data stream [0, 1, 2, ...] and applies the
     given NumPy function to it.

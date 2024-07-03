@@ -1,8 +1,16 @@
-# LN IO Python
+# LiveNodes IO Python
 
-The Livenodes IO Python package provides nodes for data input and output using Python lists/NumPy arrays directly, as well as for generating data from functions. As such, these nodes are most useful for testing other nodes or extracting results from Livenodes graphs for further external processing.
+The LiveNodes IO Python package provides nodes for data input and output using raw Python lists/NumPy arrays directly, as well as for generating data from NumPy functions. As such, these nodes are most useful for testing other nodes or extracting results from LiveNodes graphs for further external processing.
 
-[LiveNodes](https://livenodes.pages.csl.uni-bremen.de/livenodes/index.html) are small units of computation for digital signal processing in python. They are connected multiple synced channels to create complex graphs for real-time applications. Each node may provide a GUI or Graph for live interaction and visualization.
+## Nodes in this package
+| Node          | Purpose                                                               |
+| ------------- | --------------------------------------------------------------------- |
+| `In_function` | Inputs data generated from a NumPy function into the LiveNodes graph. |
+| `In_python`   | Inputs any python data into the LiveNodes graph.                      |
+| `Out_python`  | Saves all input data into an externally accessible list.              |
+
+## About LiveNodes
+[LiveNodes](https://livenodes.pages.csl.uni-bremen.de/LiveNodes/index.html) are small units of computation for digital signal processing in python. They are connected multiple synced channels to create complex graphs for real-time applications. Each node may provide a GUI or Graph for live interaction and visualization.
 
 Any contribution is welcome! These projects take more time, than I can muster, so feel free to create issues for everything that you think might work better and feel free to create a MR for them as well!
 
@@ -16,7 +24,7 @@ Yale
 
 ## Docs
 
-You can find the docs [here](https://livenodes.pages.csl.uni-bremen.de/packages/livenodes_io_python/readme.html). <span style="color:red">(TBD)</span>
+You can find the docs [here](https://livenodes.pages.csl.uni-bremen.de/packages/LiveNodes_io_python/readme.html). (TBD)
 
 ## Restrictions
 

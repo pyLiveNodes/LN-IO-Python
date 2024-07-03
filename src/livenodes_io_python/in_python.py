@@ -3,7 +3,7 @@ from livenodes_core_nodes.ports import Ports_any, Ports_empty
 
 
 class In_python(Producer):
-    """Inputs any python data into the livenodes graph.
+    """Inputs any python data into the LiveNodes graph.
 
     Data should be a list of items to be sent into the graph. Each process
     invocation sends one of these items.

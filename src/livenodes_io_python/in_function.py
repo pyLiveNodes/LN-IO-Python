@@ -96,7 +96,7 @@ class In_function(Producer_async):
             fn = linear
 
         while True:
-            samples = np.linspace(ctr, ctr + self.emit_at_once, 1)
+            samples = np.linspace(ctr, ctr + self.emit_at_once - 1, self.emit_at_once)
             print(samples)
             res = fn(samples)
             res = np.array(np.array([res] * n_channels).T)

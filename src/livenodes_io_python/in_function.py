@@ -3,18 +3,52 @@ import numpy as np
 
 from livenodes.producer_async import Producer_async
 
-from livenodes_core_nodes.ports import Port_Dict, Port_Data, Port_List_Str, Ports_empty
+from livenodes_core_nodes.ports import Port_ListUnique_Str, Ports_empty
+
+# TODO: Change once separate ports package is available
+from livenodes_simple_timeseries.ports import Port_Timeseries
 from typing import NamedTuple
 
 
 class Ports_out(NamedTuple):
-    data: Port_Data = Port_Data("Data")
-    channels: Port_List_Str = Port_List_Str("Channel Names")
-    meta: Port_Dict = Port_Dict("Meta")
+    ts: Port_Timeseries = Port_Timeseries("TimeSeries")
+    channels: Port_ListUnique_Str = Port_ListUnique_Str("Channel Names")
 
 
 class In_function(Producer_async):
-    """ """
+    """Inputs data generated from a NumPy function into the Livenodes graph.
+
+    Generates an infinite data stream [0, 1, 2, ...] and applies the
+    given NumPy function to it.
+
+    The output batch size is set via the `emit_at_once` attribute. The time
+    interval between process invocations depends on both `emit_at_once` and the
+    `sample rate` meta attribute.
+
+    If multiple output channels are defined, all of them will contain identical
+    data.
+
+    Attributes
+    ----------
+    function : str
+        Name of a NumPy function such as "sin". Defaults to a basic linear
+        function if invalid.
+    meta : dict
+        "sample_rate" : int
+            Sample rate to simulate.
+        "channel_names" : list of unique str, optional
+            List of channel names for `channels` port. Number of items also
+            sets number of channels.
+    emit_at_once : int
+        Batch size, i.e. number of samples sent per process invocation.
+
+    Ports Out
+    ---------
+    ts : Port_TimeSeries
+        Batch of output samples.
+    channels : Port_ListUnique_Str
+        List of channel names. Can be overwritten using the `meta` attribute.
+    """
 
     ports_in = Ports_empty()
     ports_out = Ports_out()
@@ -24,9 +58,9 @@ class In_function(Producer_async):
 
     example_init = {
         "function": "sin",
-        "meta": {"sample_rate": 100, "targets": ["target 1"], "channels": ["Channel 1"]},
+        "meta": {"sample_rate": 100, "channels": ["Function"]},
         "emit_at_once": 1,
-        "name": "Data input",
+        "name": "Function Input",
     }
 
     # TODO: consider using a file for meta data instead of dictionary...
@@ -38,14 +72,12 @@ class In_function(Producer_async):
         self.emit_at_once = emit_at_once
 
         self.sample_rate = meta.get('sample_rate')
-        self.targets = meta.get('targets')
         self.channels = meta.get('channels')
 
     def _settings(self):
         return {"emit_at_once": self.emit_at_once, "function": self.function, "meta": self.meta}
 
     async def _async_run(self):
-        self.ret_accu(self.meta, port=self.ports_out.meta)
         self.ret_accu(self.channels, port=self.ports_out.channels)
 
         ctr = 0
@@ -65,9 +97,10 @@ class In_function(Producer_async):
 
         while True:
             samples = np.linspace(ctr, ctr + self.emit_at_once, 1)
+            print(samples)
             res = fn(samples)
-            res = np.array([np.array([res] * n_channels).T])
-            self.ret_accu(res, port=self.ports_out.data)
+            res = np.array(np.array([res] * n_channels).T)
+            self.ret_accu(res, port=self.ports_out.ts)
 
             ctr += self.emit_at_once
 
@@ -76,5 +109,5 @@ class In_function(Producer_async):
             #     await asyncio.sleep(time_to_sleep - process_time)
             await asyncio.sleep(time_to_sleep)
 
-            yield self.ret_accumulated()
+            yield (self.ret_accumulated())
             # last_emit_time = time.time()

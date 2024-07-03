@@ -3,15 +3,16 @@ from livenodes_core_nodes.ports import Ports_any, Ports_empty
 
 
 class Out_python(Node):
-    """Saves all input into an externally accessible list.
+    """Saves all input data into an externally accessible list.
 
-    Saves each process invocation into a list. I.e. if you set the input to
-    `emit_at_once=5`, you'll get list entries of size 5. Correspondes to
-    the `in_python` interface.
+    Saves each process invocation into a list. I.e. if you set the input node's
+    `emit_at_once=5`, you'll get list entries of size 5.
 
     This data can be accessed via `get_state` on this node in your Python
     process. Useful for testing other nodes or extracting results from
     Livenodes graphs for further external processing.
+
+    Inverse of the `In_python` node.
 
     Ports In
     --------

@@ -23,9 +23,9 @@ dependencies = [
 # FIX upstream and remove here
 
 [project.entry-points."livenodes.nodes"]
-in_function = "livenodes_core_nodes.in_function:In_function"
-in_python = "livenodes_core_nodes.in_python:In_python"
-out_python = "livenodes_core_nodes.out_python:Out_python"
+in_function = "livenodes_io_python.in_function:In_function"
+in_python = "livenodes_io_python.in_python:In_python"
+out_python = "livenodes_io_python.out_python:Out_python"
 
 [project.optional-dependencies]
 dev = [

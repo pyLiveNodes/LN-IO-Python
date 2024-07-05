@@ -3,9 +3,8 @@ import numpy as np
 
 from livenodes.producer_async import Producer_async
 
-from livenodes_core_nodes.ports import Port_ListUnique_Str, Ports_empty
+from livenodes_common_ports.ports import Port_ListUnique_Str, Ports_empty
 
-# TODO: Change once separate ports package is available
 from livenodes_simple_timeseries.ports import Port_Timeseries
 from typing import NamedTuple
 

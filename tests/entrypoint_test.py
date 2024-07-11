@@ -26,9 +26,8 @@ class TestProcessing:
     def test_loads_class(self):
         in_python = [x.load() for x in entry_points()['livenodes.nodes'] if x.name == 'in_python'][0]
         from livenodes_io_python.in_python import In_python
-        from livenodes_core_nodes.in_python import In_python as In_python_legacy  # TODO: Remove once livenodes_core_nodes is phased out
 
-        assert in_python == In_python or in_python == In_python_legacy
+        assert in_python == In_python
 
     def test_all_loadable(self):
         for x in entry_points()['livenodes.nodes']:

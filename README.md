@@ -24,7 +24,7 @@ Yale
 
 ## Docs
 
-You can find the docs [here](https://livenodes.pages.csl.uni-bremen.de/packages/livenodes_io_python/readme.html). (TBD)
+You can find the docs [here](https://livenodes.pages.csl.uni-bremen.de/packages/livenodes_io_python/readme.html).
 
 ## Restrictions
 

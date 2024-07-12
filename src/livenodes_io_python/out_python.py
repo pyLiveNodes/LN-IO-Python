@@ -21,7 +21,7 @@ class Out_python(Node):
 
     Methods
     -------
-    get_state : list
+    get_state()
         Returns the saved data. Datatype of list entries depends on input data.
     """
 

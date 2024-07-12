@@ -19,8 +19,8 @@ class Out_python(Node):
     any : Port_Any
         Input data entry to save.
 
-    Methods
-    -------
+    Additional Methods
+    ------------------
     get_state()
         Returns the saved data. Datatype of list entries depends on input data.
     """

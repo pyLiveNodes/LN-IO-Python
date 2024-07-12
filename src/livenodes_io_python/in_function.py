@@ -31,6 +31,7 @@ class In_function(Producer_async):
         Name of a NumPy function such as "sin". Defaults to a basic linear
         function if invalid.
     meta : dict
+        Dictionary of meta parameters.
         "sample_rate" : int
             Sample rate to simulate.
         "channel_names" : list of unique str, optional

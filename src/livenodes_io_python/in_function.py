@@ -33,9 +33,9 @@ class In_function(Producer_async):
     meta : dict
         Dict of meta parameters.
 
-        * "sample_rate" : int
+        * 'sample_rate' : int
             Sample rate to simulate.
-        * "channel_names" : list of unique str, optional
+        * 'channel_names' : list of unique str, optional
             List of channel names for `channels` port. Number of items also
             sets number of channels.
     emit_at_once : int

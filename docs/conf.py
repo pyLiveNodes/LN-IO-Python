@@ -53,6 +53,6 @@ html_short_title = '%s-%s' % (project, version)
 napoleon_use_ivar = True
 napoleon_use_rtype = False
 napoleon_use_param = False
-napoleon_custom_sections = [('Ports In', 'params_style'), ('Ports Out', 'params_style')]
+napoleon_custom_sections = [('Ports In', 'params_style'), ('Ports Out', 'params_style'), ('Methods', 'params_style')]
 
 linkcheck_ignore = [r'https://livenodes\.pages\.csl\.uni-bremen\.de/.*']

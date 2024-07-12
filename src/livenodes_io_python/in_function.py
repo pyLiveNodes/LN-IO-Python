@@ -32,6 +32,7 @@ class In_function(Producer_async):
         function if invalid.
     meta : dict
         Dict of meta parameters.
+
         * "sample_rate" : int
             Sample rate to simulate.
         * "channel_names" : list of unique str, optional

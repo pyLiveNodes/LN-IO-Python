@@ -23,6 +23,8 @@ class Out_python(Node):
     -------
     get_state()
         Returns the saved data. Datatype of list entries depends on input data.
+    reset()
+        Resets the saved data to an empty list.
     """
 
     ports_in = Ports_any()
@@ -35,10 +37,13 @@ class Out_python(Node):
 
     def __init__(self, name="Python Output", **kwargs):
         super().__init__(name, **kwargs)
-        self.out = []
+        self.reset()
 
     def process(self, any, **kwargs):
         self.out.append(any)
 
     def get_state(self):
         return self.out
+
+    def reset(self):
+        self.out = []

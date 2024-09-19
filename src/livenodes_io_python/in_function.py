@@ -4,10 +4,10 @@ import numpy as np
 from livenodes.producer_async import Producer_async
 
 from livenodes_common_ports.ports import Port_ListUnique_Str, Ports_empty, Port_Timeseries
-from livenodes import Ports_Collection
+from typing import NamedTuple
 
 
-class Ports_out(Ports_Collection):
+class Ports_out(NamedTuple):
     ts: Port_Timeseries = Port_Timeseries("TimeSeries")
     channels: Port_ListUnique_Str = Port_ListUnique_Str("Channel Names")
 

@@ -1,5 +1,5 @@
 from livenodes.node import Node
-from livenodes_common_ports.ports import Ports_any, Ports_empty
+from livenodes_common_ports import Ports_any, Ports_empty
 
 
 class Out_python(Node):

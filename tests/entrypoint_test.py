@@ -8,7 +8,7 @@ import pytest
 @pytest.fixture
 def discovered_modules():
     exclude = ['__init__', 'utils', 'ports']
-    modules = glob.glob(join(dirname(__file__), '../src/livenodes_io_python/', "*.py"))
+    modules = glob.glob(join(dirname(__file__), '../src/ln_io_python/', "*.py"))
     names = [basename(f)[:-3] for f in modules if isfile(f)]
     return [f for f in names if not f in exclude]
 
@@ -25,7 +25,7 @@ class TestProcessing:
 
     def test_loads_class(self):
         in_python = [x.load() for x in entry_points(group='livenodes.nodes') if x.name == 'in_python'][0]
-        from livenodes_io_python.in_python import In_python
+        from ln_io_python.in_python import In_python
 
         assert in_python == In_python
 

@@ -1,5 +1,5 @@
 from livenodes.producer import Producer
-from livenodes_common_ports import Ports_any, Ports_empty
+from ln_ports import Ports_any, Ports_empty
 
 
 class In_python(Producer):

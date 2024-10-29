@@ -20,11 +20,11 @@ Yale
 
 ## Installation
 
-`pip install livenodes_io_python --extra-index-url https://package_puller:8qYs4hBAsmAHJ5AdS_y9@gitlab.csl.uni-bremen.de/api/v4/groups/368/-/packages/pypi/simple`
+`pip install ln_io_python --extra-index-url https://package_puller:8qYs4hBAsmAHJ5AdS_y9@gitlab.csl.uni-bremen.de/api/v4/groups/368/-/packages/pypi/simple`
 
 ## Docs
 
-You can find the docs [here](https://livenodes.pages.csl.uni-bremen.de/packages/livenodes_io_python/readme.html).
+You can find the docs [here](https://livenodes.pages.csl.uni-bremen.de/packages/ln_io_python/readme.html).
 
 ## Restrictions
 

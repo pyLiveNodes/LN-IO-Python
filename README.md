@@ -1,3 +1,6 @@
+[![Format and Test](https://github.com/pyLiveNodes/LN-IO-Python/actions/workflows/format_test.yml/badge.svg)](https://github.com/pyLiveNodes/LN-IO-Python/actions/workflows/format_test.yml)
+[![Publish](https://github.com/pyLiveNodes/LN-IO-Python/actions/workflows/publish.yml/badge.svg)](https://github.com/pyLiveNodes/LN-IO-Python/actions/workflows/publish.yml)
+
 # LiveNodes IO Python
 
 The LiveNodes IO Python package provides nodes for data input and output using raw Python lists/NumPy arrays directly, as well as for generating data from NumPy functions. As such, these nodes are most useful for testing other nodes or extracting results from LiveNodes graphs for further external processing.
@@ -20,7 +23,7 @@ Yale
 
 ## Installation
 
-`pip install ln_io_python --extra-index-url https://package_puller:8qYs4hBAsmAHJ5AdS_y9@gitlab.csl.uni-bremen.de/api/v4/groups/368/-/packages/pypi/simple`
+`pip install ln_io_python`
 
 ## Docs
 
